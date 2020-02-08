@@ -1,0 +1,10 @@
+{
+  "commitish" : "3.0.0",
+  "iOS" : [
+    {
+      "name" : "RxFeedback",
+      "hash" : "f4996d8d4bfb85a16708fa3358b53182f985fee31b96ff614d7be367845448c2",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}

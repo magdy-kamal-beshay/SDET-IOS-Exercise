@@ -1,0 +1,10 @@
+{
+  "commitish" : "5.0.2",
+  "iOS" : [
+    {
+      "name" : "FBSnapshotTestCase",
+      "hash" : "ba034952718a34f1af370a5ccca77cadd58a1e8b75ed7f36afa6dde42cea4159",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}
