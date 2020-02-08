@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047E7DAF23EF318C00C3A296 /* LoginDemoRxReduxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E7DAE23EF318C00C3A296 /* LoginDemoRxReduxUITests.swift */; };
+		047E7DAF23EF318C00C3A296 /* LoginViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047E7DAE23EF318C00C3A296 /* LoginViewUITests.swift */; };
 		597E2FC921A323130011D2B9 /* UIAlertController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597E2FC821A323130011D2B9 /* UIAlertController+Rx.swift */; };
 		59B50F492199C7E0001286B1 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B50F482199C7E0001286B1 /* DemoTableViewCell.swift */; };
 		59B50F4D2199D38E001286B1 /* DemoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B50F4C2199D38E001286B1 /* DemoCellModel.swift */; };
@@ -52,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		047E7DAC23EF318C00C3A296 /* LoginDemoRxReduxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginDemoRxReduxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		047E7DAE23EF318C00C3A296 /* LoginDemoRxReduxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDemoRxReduxUITests.swift; sourceTree = "<group>"; };
+		047E7DAE23EF318C00C3A296 /* LoginViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITests.swift; sourceTree = "<group>"; };
 		047E7DB023EF318C00C3A296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597E2FC821A323130011D2B9 /* UIAlertController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Rx.swift"; sourceTree = "<group>"; };
 		59B50F482199C7E0001286B1 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		047E7DAD23EF318C00C3A296 /* LoginDemoRxReduxUITests */ = {
 			isa = PBXGroup;
 			children = (
-				047E7DAE23EF318C00C3A296 /* LoginDemoRxReduxUITests.swift */,
+				047E7DAE23EF318C00C3A296 /* LoginViewUITests.swift */,
 				047E7DB023EF318C00C3A296 /* Info.plist */,
 			);
 			path = LoginDemoRxReduxUITests;
@@ -416,7 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047E7DAF23EF318C00C3A296 /* LoginDemoRxReduxUITests.swift in Sources */,
+				047E7DAF23EF318C00C3A296 /* LoginViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
