@@ -17,17 +17,20 @@ final class DemoTableViewCell: UITableViewCell {
     private let titleTextLabel: UILabel = {
         var titleLabel = UILabel(frame: .zero)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.accessibilityIdentifier = "characterTitleLabel"
         titleLabel.numberOfLines = 1
         return titleLabel
     }()
     private let descriptionTextLabel: UILabel = {
         var titleLabel = UILabel(frame: .zero)
         titleLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        titleLabel.accessibilityIdentifier = "characterDescriptionLabel"
         titleLabel.numberOfLines = 0
         return titleLabel
     }()
     private let cellImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
+        imageView.accessibilityIdentifier = "characterImageView"
         imageView.backgroundColor = RandomColorHelper.randomColorFromPalette()
         return imageView
     }()

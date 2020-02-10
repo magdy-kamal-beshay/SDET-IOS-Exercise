@@ -147,6 +147,7 @@ final class LoginView: UIView {
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .white)
+        spinner.accessibilityIdentifier = "loadingIndicatior"
         return spinner
     }()
     

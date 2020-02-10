@@ -9,33 +9,8 @@
 import XCTest
 @testable import LoginDemoRxRedux
 
-class LoginViewUITests: XCTestCase {
+class LoginViewUITests: BaseUITestClass {
 
-    var app: XCUIApplication!
-    
-    override func setUp() {
-        super.setUp()
-        app = XCUIApplication()
-        launchApp()
-    }
-    
-    override func tearDown() {
-        app = nil
-        super.tearDown()
-    }
-   
-    func launchApp() {
-        app.launch()
-    }
-    
-    func enterUsernameAndPassword(userName:String, password:String){
-        app.textFields["Username"].tap()
-        app.textFields["Username"].typeText(userName)
-        app.secureTextFields["Password"].tap()
-        app.secureTextFields["Password"].typeText(password)
-        
-    }
-    
     func testCheckIfTitleLableExists() {
         let travelAppLabel = app.staticTexts["travelapp"]
         XCTAssert(travelAppLabel.exists)
@@ -77,27 +52,65 @@ class LoginViewUITests: XCTestCase {
         XCTAssert(lockButton.exists)
     }
     
+    func testCheckIfLoaderExists() {
+        enterInValidUserNameAndPassword()
+        app.buttons["Login"].tap()
+        let activityIndicator = app.activityIndicators["loadingIndicatior"]
+        XCTAssert(activityIndicator.exists)
+    }
+    
     func testCheckIfLoginButtonDisabled() {
         let loginBtn = app.buttons["Login"]
         XCTAssertFalse(loginBtn.isEnabled)
     }
     
+    func testCheckIfLoginButtonDisabledWhenUserNameLessThan5CharactersAndPasswordLessThan7Characters() {
+        enterUsernameAndPassword(userName: "Firs", password: "First")
+        let loginBtn = app.buttons["Login"]
+        XCTAssertFalse(loginBtn.isEnabled)
+    }
+    
     func testIfLoginButtonEnabled() {
-        enterUsernameAndPassword(userName: "FirstName", password: "FirstPassword")
+        enterInValidUserNameAndPassword()
+        let loginBtn = app.buttons["Login"]
+        XCTAssertTrue(loginBtn.isEnabled)
+    }
+    
+    func testCheckIfLoginButtonEnabledWhenUserNameMoreThan5CharactersAndPasswordMoreThan7Characters() {
+        enterInValidUserNameAndPassword()
         let loginBtn = app.buttons["Login"]
         XCTAssertTrue(loginBtn.isEnabled)
     }
     
     func testCheckIfPasswordIsEncypted() {
-        enterUsernameAndPassword(userName: "FirstName", password: "FirstPassword")
+        enterInValidUserNameAndPassword()
         let password = app.secureTextFields["Password"]
         XCTAssert(password.value as! String  == "•••••••••••••")
     }
     
     func testCheckIfUnLockButtonMakePasswordReadable() {
-        enterUsernameAndPassword(userName: "FirstName", password: "FirstPassword")
+        enterInValidUserNameAndPassword()
         let password = app.textFields["Password"]
         app.buttons["unlock"].tap()
         XCTAssert(password.value as! String  == "FirstPassword")
     }
+    
+    func testLoginFailure() {
+        enterInValidUserNameAndPassword()
+        app.buttons["Login"].tap()
+        let exists = NSPredicate(format: "exists == 1")
+        let alert = app.alerts["An unowned Error occured"]
+        expectation(for: exists, evaluatedWith: alert, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+ 
+    func testLoginSuccess() {
+        enterValidUserNameAndPassword()
+        app.buttons["Login"].tap()
+        let navBarTitle = app.navigationBars["Rx TableView Example"]
+        let exists = NSPredicate(format: "exists == 1")
+        expectation(for: exists, evaluatedWith: navBarTitle, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
 }

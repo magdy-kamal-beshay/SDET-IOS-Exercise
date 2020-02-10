@@ -24,11 +24,13 @@ final class DemoTableView: UIView {
 
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero)
+        table.accessibilityIdentifier = "RxTableView"
         return table
     }()
 
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.accessibilityIdentifier = "RxTableViewActivityIndictor"
         spinner.hidesWhenStopped = true
         return spinner
     }()
