@@ -16,7 +16,7 @@ protocol GOTServiceProtocol {
 
 final class GOTService: GOTServiceProtocol {
     
-    private let url = "https://api.got.show/api/characters/"
+    private let url = "https://api.got.show/api/show/characters/"
     
     func getAllCharacters(completion: @escaping (APIResult<[GOTCharacter]>) -> Void) {
         Alamofire.request(url).responseData { (response) in
